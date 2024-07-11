@@ -23,7 +23,6 @@ External Secrets OperatorをHelmを使用してインストールします。
 
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-
 ```
 
 ### 3. Flaskサーバーのセットアップ
@@ -65,5 +64,5 @@ apt-get update
 apt-get install -y iproute2
 
 # ssコマンドを実行してネットワークソケットの情報を表示
-ss -tuln
+ss
 ```
