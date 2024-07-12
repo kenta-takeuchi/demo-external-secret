@@ -22,7 +22,9 @@ minikube start
 External Secrets OperatorをHelmを使用してインストールします。
 
 ```bash
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+helm repo add external-secrets https://charts.external-secrets.io
+helm repo update
+helm install external-secrets external-secrets/external-secrets --version 0.9.18
 ```
 
 ### 3. Flaskサーバーのセットアップ
