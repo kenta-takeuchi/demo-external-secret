@@ -44,27 +44,7 @@ kubectl apply -f k8s/external-secret.yaml
 ```
 
 ## 動作確認
-### podの確認
+### Secretの確認
 ```bash
-kubectl get pods
-```
-
-### Flaskサーバーログの確認
-```
-kubectl logs <server-pod-name>
-```
-
-### ネットワークの状態確認
-デバッグ用コンテナを起動し、ネットワークの状態を確認します。
-
-```bash
-# デバッグ用コンテナを起動
-kubectl debug -it <external-secret-pod-name> --image=ubuntu
-
-# デバッグ用コンテナ内でパッケージをインストール
-apt-get update
-apt-get install -y iproute2
-
-# ssコマンドを実行してネットワークソケットの情報を表示
-ss
+kubectl get secret my-kubernetes-secret -o yaml
 ```
